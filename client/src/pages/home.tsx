@@ -218,7 +218,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center justify-center p-4 gradient-bg">
       {/* Header */}
       <div className="text-center mb-8 animate-fade-in">
-        <h1 className="text-4xl md:text-6xl font-bold text-green-500 mb-4">
+        <h1 className="text-4xl md:text-6xl font-bold text-red-500 mb-4">
           <Wand2 className="inline mr-4 text-accent" />
           Random Fun Generator
         </h1>
