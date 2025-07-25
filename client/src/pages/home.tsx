@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Wand2, Laugh, Quote, Hash, Cat, Heart, AlertTriangle, RotateCcw } from "lucide-react";
+import { Wand2, Laugh, Quote, Hash, Cat, Heart, AlertTriangle, RotateCcw, Sparkles, Zap, Star, Smile, Coffee } from "lucide-react";
 import type { Joke, Quote as QuoteType } from "@shared/schema";
 
 type ContentType = 'welcome' | 'joke' | 'quote' | 'number' | 'cat' | 'error';
@@ -15,6 +15,19 @@ export default function Home() {
   const [currentNumber, setCurrentNumber] = useState<number>(0);
   const [currentCatImage, setCurrentCatImage] = useState<string>('');
   const [error, setError] = useState<string>('');
+
+  // Random positive sentiment that changes each page load
+  const randomSentiment = useMemo(() => {
+    const sentiments = [
+      { text: "love", icon: Heart, color: "text-red-400" },
+      { text: "joy", icon: Smile, color: "text-yellow-400" },
+      { text: "passion", icon: Sparkles, color: "text-purple-400" },
+      { text: "enthusiasm", icon: Zap, color: "text-blue-400" },
+      { text: "excitement", icon: Star, color: "text-green-400" },
+      { text: "energy", icon: Coffee, color: "text-orange-400" }
+    ];
+    return sentiments[Math.floor(Math.random() * sentiments.length)];
+  }, []);
 
   const { data: jokes } = useQuery<Joke[]>({
     queryKey: ['/api/jokes'],
@@ -247,7 +260,7 @@ export default function Home() {
       {/* Footer */}
       <div className="mt-12 text-center text-blue-100">
         <p className="text-sm opacity-75">
-          Made with <Heart className="inline h-4 w-4 text-red-400" /> for random fun
+          Made with <randomSentiment.icon className={`inline h-4 w-4 ${randomSentiment.color}`} /> {randomSentiment.text} for random fun
         </p>
       </div>
     </div>
