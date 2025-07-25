@@ -10,6 +10,7 @@ This is a full-stack React application that generates random content including j
 - Built complete Random Fun Generator web application
 - Implemented random content generation (jokes, quotes, numbers, cat images)
 - Added dark blue gradient background per user request
+- Changed background to solid black per user request
 - Set up in-memory storage with pre-loaded jokes and quotes
 - Integrated external cat image API (cataas.com)
 - Added smooth animations and responsive design
