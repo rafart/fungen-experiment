@@ -232,7 +232,7 @@ export default function Home() {
         <Button 
           onClick={generateRandomContent}
           disabled={isLoading}
-          className="bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary text-white font-bold py-4 px-8 rounded-full text-xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 hover:from-purple-500 hover:via-blue-500 hover:via-green-500 hover:via-yellow-500 hover:to-red-500 text-white font-bold py-4 px-8 rounded-full text-xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed animate-pulse"
         >
           <Wand2 className="mr-3" />
           Generate Something Fun!
